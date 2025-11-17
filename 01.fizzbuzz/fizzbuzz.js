@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-for (let fund = 1; fund < 21; fund++) {
-  if (fund % 3 == 0 && fund % 5 == 0) {
+for (let number = 1; number < 21; number++) {
+  if (number % 3 == 0 && number % 5 == 0) {
     console.log("FizzBuzz");
-  } else if (fund % 5 == 0) {
+  } else if (number % 5 == 0) {
     console.log("Buzz");
-  } else if (fund % 3 == 0) {
+  } else if (number % 3 == 0) {
     console.log("Fizz");
   } else {
-    console.log(fund);
+    console.log(number);
   }
 }
