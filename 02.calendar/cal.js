@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import minimist from "minimist";
 
 const today = new Date();
