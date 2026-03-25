@@ -24,7 +24,7 @@ for (let d = 1; d <= lastDate.getDate(); d++) {
   cells.push(d);
 }
 
-console.log(`       ${month}月 ${year} `);
+console.log(`${month}月 ${year}`.padStart(13));
 console.log("日 月 火 水 木 金 土");
 
 for (let w = 0; w < cells.length; w += 7) {
