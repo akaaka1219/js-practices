@@ -12,15 +12,15 @@ const args = minimist(process.argv.slice(2), {
 const year = args.y;
 const month = args.m;
 
-const firstDay = new Date(year, month - 1, 1).getDay();
-const lastDate = new Date(year, month, 0).getDate();
+const firstDate = new Date(year, month - 1, 1);
+const lastDate = new Date(year, month, 0);
 
 const cells = [];
-for (let i = 0; i < firstDay; i++) {
+for (let i = 0; i < firstDate.getDay(); i++) {
   cells.push(null);
 }
 
-for (let d = 1; d <= lastDate; d++) {
+for (let d = 1; d <= lastDate.getDate(); d++) {
   cells.push(d);
 }
 
