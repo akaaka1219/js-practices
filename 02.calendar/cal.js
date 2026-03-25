@@ -30,11 +30,17 @@ console.log("日 月 火 水 木 金 土");
 for (let startIndex = 0; startIndex < cells.length; startIndex += 7) {
   const week = cells.slice(startIndex, startIndex + 7);
 
-  for (const day of week) {
+  for (let dayIndex = 0; dayIndex < week.length; dayIndex++) {
+    const day = week[dayIndex];
+
     if (day === null) {
-      process.stdout.write("   ");
+      process.stdout.write(`   `);
     } else {
-      process.stdout.write(String(day).padStart(2, " ") + " ");
+      process.stdout.write(
+        dayIndex === week.length - 1
+          ? `${String(day).padStart(2)}`
+          : `${String(day).padStart(2)} `,
+      );
     }
   }
 
