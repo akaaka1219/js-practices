@@ -20,24 +20,24 @@ for (let i = 0; i < firstDate.getDay(); i++) {
   cells.push(null);
 }
 
-for (let d = 1; d <= lastDate.getDate(); d++) {
-  cells.push(d);
+for (let i = 1; i <= lastDate.getDate(); i++) {
+  cells.push(i);
 }
 
 console.log(`${month}月 ${year}`.padStart(13));
 console.log("日 月 火 水 木 金 土");
 
 for (let startIndex = 0; startIndex < cells.length; startIndex += 7) {
-  const week = cells.slice(startIndex, startIndex + 7);
+  const weekDays = cells.slice(startIndex, startIndex + 7);
 
-  for (let dayIndex = 0; dayIndex < week.length; dayIndex++) {
-    const day = week[dayIndex];
+  for (let dayIndex = 0; dayIndex < weekDays.length; dayIndex++) {
+    const day = weekDays[dayIndex];
 
     if (day === null) {
       process.stdout.write(`   `);
     } else {
       process.stdout.write(
-        dayIndex === week.length - 1
+        dayIndex === weekDays.length - 1
           ? `${String(day).padStart(2)}`
           : `${String(day).padStart(2)} `,
       );
