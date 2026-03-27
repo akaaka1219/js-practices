@@ -41,19 +41,17 @@ console.log("日 月 火 水 木 金 土");
 for (let startIndex = 0; startIndex < cells.length; startIndex += 7) {
   const weekDays = cells.slice(startIndex, startIndex + 7);
 
-  for (let dayIndex = 0; dayIndex < weekDays.length; dayIndex++) {
-    const day = weekDays[dayIndex];
+  weekDays.forEach((day, dayIndex) => {
+    const isLastColumn = dayIndex === weekDays.length - 1;
 
-    if (day === null) {
-      process.stdout.write(`   `);
-    } else {
+    if (day !== null) {
       process.stdout.write(
-        dayIndex === weekDays.length - 1
-          ? `${String(day).padStart(2)}`
-          : `${String(day).padStart(2)} `,
+        `${String(day).padStart(2)}${isLastColumn ? "" : " "}`,
       );
+    } else {
+      process.stdout.write("   ");
     }
-  }
+  });
 
   console.log();
 }
