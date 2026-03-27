@@ -24,7 +24,18 @@ for (let i = 1; i <= lastDate.getDate(); i++) {
   cells.push(i);
 }
 
-console.log(`${month}月 ${year}`.padStart(13));
+function printCentered(text) {
+  const calendarWidth = 20;
+  const padding = Math.floor((calendarWidth - text.length) / 2);
+
+  if (padding > 0) {
+    console.log(" ".repeat(padding) + text);
+  } else {
+    console.log(text);
+  }
+}
+
+printCentered(`${month}月 ${year}`);
 console.log("日 月 火 水 木 金 土");
 
 for (let startIndex = 0; startIndex < cells.length; startIndex += 7) {
