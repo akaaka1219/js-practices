@@ -42,12 +42,12 @@ for (let startIndex = 0; startIndex < cells.length; startIndex += 7) {
   const weekDays = cells.slice(startIndex, startIndex + 7);
 
   weekDays.forEach((day, dayIndex) => {
-    const isLastColumn = dayIndex === weekDays.length - 1;
-
     if (day !== null) {
-      process.stdout.write(
-        `${String(day).padStart(2)}${isLastColumn ? "" : " "}`,
-      );
+      const isLastColumn = dayIndex === weekDays.length - 1;
+      const dayStr = String(day).padStart(2);
+      const space = isLastColumn ? "" : " ";
+
+      process.stdout.write(`${dayStr}${space}`);
     } else {
       process.stdout.write("   ");
     }
