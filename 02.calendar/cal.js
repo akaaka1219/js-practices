@@ -1,17 +1,6 @@
 #!/usr/bin/env node
 import minimist from "minimist";
 
-function printCentered(text) {
-  const calendarWidth = 20;
-  const padding = Math.floor((calendarWidth - text.length) / 2);
-
-  if (padding > 0) {
-    console.log(" ".repeat(padding) + text);
-  } else {
-    console.log(text);
-  }
-}
-
 const today = new Date();
 const args = minimist(process.argv.slice(2), {
   default: {
@@ -35,7 +24,7 @@ for (let i = 1; i <= lastDate.getDate(); i++) {
   cells.push(i);
 }
 
-printCentered(`${month}月 ${year}`);
+console.log(`      ${month}月 ${year}`);
 console.log("日 月 火 水 木 金 土");
 
 for (let startIndex = 0; startIndex < cells.length; startIndex += 7) {
